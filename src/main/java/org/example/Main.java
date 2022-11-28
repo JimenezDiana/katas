@@ -213,13 +213,8 @@ Your task is to make a function that can take any non-negative integer as an arg
 its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
       */
      public static int sortDesc(final int num) {
-        int numDesc = 0;
-        for (int i = 0; i < num.size(); i--){
 
-        }
-
-
-        return numDesc;
+       //PENDIENTE
      }
 
     public static void main(String[] args) {
