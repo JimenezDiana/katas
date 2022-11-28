@@ -214,9 +214,21 @@ its digits in descending order. Essentially, rearrange the digits to create the 
       */
      public static int sortDesc(final int num) {
 
-       //PENDIENTE
+     return 0;  //PENDIENTE
      }
 
+    /*Create a function with two arguments that will return an array of the first n multiples of x.
+    Assume both the given number and the number of times to count will be positive numbers greater than 0.
+    Return the results as an array or list ( depending on language ).*/
+
+    public static int[] countBy(int x, int n){
+        int[] counter = new int[n];
+        for (int i = 0; i < n; i++) {
+            counter[i] = x * (i + 1);
+
+        }
+        return counter;
+    }
     public static void main(String[] args) {
         Object[] ab = new Object[]{1,2,3,4,7};
         int[] aa = new int[]{2,3,4,5,6};
@@ -228,6 +240,7 @@ its digits in descending order. Essentially, rearrange the digits to create the 
         System.out.println(areYouPlayingBanjo("Rocio"));
         System.out.println(toAlternativeString("12345"));
         //System.out.println(find(aa));
+        System.out.println(Arrays.toString(countBy(6, 3)));
     }
 
 
