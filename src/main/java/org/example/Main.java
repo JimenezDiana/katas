@@ -229,6 +229,85 @@ its digits in descending order. Essentially, rearrange the digits to create the 
         }
         return counter;
     }
+
+    /*
+    DESCRIPTION:
+    Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of
+    four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+    Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical
+    structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+    Create a function which translates a given DNA string into RNA.
+     */
+
+    public static String dnaToRna(String dna) {
+        String rna = "";
+        String[] dna2 = dna.split("");
+        for (int i = 0; i < dna2.length; i++){
+            if(dna2[i].contains("T")){
+                dna2[i] = "U";
+            }
+            rna += dna2[i];
+        }
+        return rna;
+    }
+
+    /*Clock shows h hours, m minutes and s seconds after midnight.
+    Your task is to write a function which returns the time since midnight in milliseconds.
+    */
+
+    public static int Past(int h, int m, int s)
+    {
+        Integer milisegundos = 0;
+        if(h > 0){
+            milisegundos += h * 3600000;
+        }
+        if(m > 0){
+            milisegundos += m * 60000;
+        }
+        if(s > 0){
+            milisegundos += s * 1000;
+        }
+        return milisegundos;
+    }
+
+    /*
+    In this kata you will create a function that takes a list of non-negative
+    integers and strings and returns a new list with the strings filtered out.
+     */
+
+    public static List<Object> filterList(final List<Object> list) {
+        List<Object> lista = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++){
+        if(list.get(i) instanceof Number){
+            lista.add(list.get(i));
+        }
+    }return lista;
+    }
+
+    /*Consider an array/list of sheep where some sheep may be missing from their place.
+    We need a function that counts the number of sheep present in the array (true means present).*/
+
+    public int countSheeps(Boolean[] arrayOfSheeps) {
+        int numSheeps = 0;
+
+        for(int i = 0; i < arrayOfSheeps.length; i++) {
+            if(arrayOfSheeps[i] != null && arrayOfSheeps[i])
+                numSheeps += 1;
+        }
+        return numSheeps;
+    }
+
+    /* Given an array of integers your solution should find the smallest integer. */
+
+    public static int findSmallestInt(int[] args) {
+        int smallest= args[0];
+        for (int i = 1; i < args.length; i++) {
+            if (smallest > args[i])
+                smallest= args[i];
+        }
+        return smallest;
+    }
+
     public static void main(String[] args) {
         Object[] ab = new Object[]{1,2,3,4,7};
         int[] aa = new int[]{2,3,4,5,6};
@@ -240,11 +319,9 @@ its digits in descending order. Essentially, rearrange the digits to create the 
         System.out.println(areYouPlayingBanjo("Rocio"));
         System.out.println(toAlternativeString("12345"));
         //System.out.println(find(aa));
-        System.out.println(Arrays.toString(countBy(6, 3)));
+        System.out.println(Arrays.toString(countBy(5, 4)));
+        System.out.println(dnaToRna("GACTT"));
+        System.out.println(Past(1, 3, 6));
+        System.out.println(filterList(List.of(1,2,3,"kowsm")));
     }
-
-
-
-
-
 }
